@@ -1,0 +1,65 @@
+<script type="text/javascript">
+    RED.nodes.registerType('buddys-simple-timer',{
+        category: 'function',
+        color: '#d7f7be',
+        defaults: {
+            name: {value:""},
+            timer_seconds: {value:"", required:true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "timer.png",
+        label: function() {
+            return this.name||"buddys simple timer";
+        }
+    });
+</script>
+
+<style>
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .form-row label {
+        margin-right: auto;
+    }
+    .form-row input[type="text"],
+    .form-row input[type="number"] {
+        width: 72%;
+        flex: 0 0 auto;
+    }
+</style>
+
+<script type="text/html" data-template-name="buddys-simple-timer">
+    <div class="form-row">
+        <label for="node-input-timer_seconds"><i class="icon-tag"></i> Timer Seconds</label>
+        <input type="number" id="node-input-timer_seconds" placeholder="Seconds">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="buddys-simple-timer">
+    <p>A Node-RED timing node designed to forward the payload after a specified delay in seconds. The timer resets upon receiving a new payload. Includes status indication for the scheduled trigger time. Enjoy!</p>
+    <hr>
+    <h3>Details</h3>
+    <p>
+        <ul>
+        To get started, connect the Buddys Simple Timer to the nodes in your flow, configure the delay, and you're all set.
+            <p></p>
+            <li><strong>Configuration:</strong> Input the desired countdown time in seconds. The timer will reset this countdown with each new incoming payload. Override the countdown duration with a payload message, assign a numerical value for the countdown to <code>msg.timer_seconds</code> in your flow.</li>
+            <p></p>
+            <li><strong>Status Feedback:</strong> Provides a status indication of when the timer is scheduled to trigger.</li>
+            <p></p>
+            <li><strong>Persistent Memory:</strong> Remembers the countdown state even after Node-RED restarts or redeploys.</li>
+            <p></p>
+            <li><strong>Immediate Execution:</strong> To trigger the timer immediately, send the value of <code>0</code> in <code>msg.timer_seconds</code>, or send <code>"STOP"</code> in <code>msg.payload</code> to halt the timer immediately.</li>
+        </ul>
+    </p>
+    <h3>Input</h3>
+    <dl>
+        <dt><strong>msg.timer_seconds</strong></dt>
+        <dd>The value must be a <code>Number</code>. You need to include a number <code>value</code> in <code>msg.timer_seconds</code> along with your payload or any other data. This number tells the timer how many seconds to wait."</dd>
+    </dl>
+    <h3>Outputs</h3>
+    <p>Outputs the same data it received after waiting for the time you set.</p>
+</script>

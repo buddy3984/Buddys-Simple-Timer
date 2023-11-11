@@ -1,0 +1,32 @@
+{
+  "name": "buddys-simple-timer",
+  "version": "0.0.1",
+  "description": "A Node-RED timing node designed to forward the payload after a specified delay in seconds. The timer resets upon receiving a new payload. Includes status indication for the scheduled trigger time.",
+  "main": "buddys-simple-timer.js",
+  "node-red": {
+    "nodes": {
+      "buddys-simple-timer": "buddys-simple-timer.js"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node-RED timer node",
+    "Payload delay function",
+    "Resettable timer",
+    "Timer status feedback",
+    "Scheduled trigger Node-RED",
+    "Dynamic delay node",
+    "Node-RED payload scheduling",
+    "Real-time timer control Node-RED",
+    "Node-RED countdown timer",
+    "Event scheduling Node-RED",
+    "Node-RED flow timing management",
+    "Payload delay with reset",
+    "Node-RED timing status indicator"
+  ],
+  "author": "Buddy Allen Thomas",
+  "Instagram": "buddyallenthomas",
+  "license": "MIT"
+}
